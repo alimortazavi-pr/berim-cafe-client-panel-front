@@ -1,0 +1,9 @@
+.nextui-input-helper-text-container {
+  position: static !important;
+}
+
+.nextui-input-helper-text {
+  font-size: 14px !important;
+  margin-bottom: 0px !important;
+  letter-spacing: normal !important;
+}

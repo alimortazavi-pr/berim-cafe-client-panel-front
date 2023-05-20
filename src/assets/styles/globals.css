@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url(./preflight.css);
+
+/* Import other styles */
+@import url(./next-ui-custom.css);
+
+* {
+  font-family: "yekan-bakh", sans-serif !important;
+}
+
+/* React select custom */
+@layer components {
+  .my-react-select-container .my-react-select__control {
+    @apply bg-white rounded-xl pr-4 text-[0.875rem] dark:bg-gray-800 min-h-[2.5rem] border-none shadow-[0_0_0_2px_rgba(0,0,0,0.15)] hover:shadow-[0_0_0_2px_#000000] transition-all duration-300 mt-2;
+  }
+
+  .my-react-select-container .my-react-select__control--is-focused {
+    @apply shadow-[0_0_0_2px_#000000];
+  }
+
+  .my-react-select-container .my-react-select__menu {
+    @apply bg-white dark:bg-gray-800 border-[1px] border-gray-300 dark:border-gray-600 rounded-xl z-[999];
+  }
+
+  .my-react-select-container .my-react-select__option {
+    @apply text-gray-600 dark:text-gray-200 bg-white hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-800 rounded-xl;
+  }
+
+  .my-react-select-container .my-react-select__indicator-separator {
+    @apply bg-gray-400;
+  }
+
+  .my-react-select-container .my-react-select__input-container,
+  .my-react-select-container .my-react-select__placeholder,
+  .my-react-select-container .my-react-select__single-value {
+    @apply text-gray-800 dark:text-gray-200 m-0;
+  }
+
+  .my-react-select-container .my-react-select__placeholder {
+    @apply text-[#889096];
+  }
+
+  .my-react-select-container .my-react-select__value-container {
+    @apply p-0;
+  }
+}
