@@ -3,7 +3,7 @@
   "short_name": "بریم کافه",
   "theme_color": "#fef08a",
   "background_color": "#fafafa",
-  "display": "fullscreen",
+  "display": "standalone",
   "scope": "./",
   "start_url": "./",
   "icons": [

@@ -3,12 +3,11 @@ import Head from "next/head";
 
 //Redux
 import { useAppDispatch } from "@/store/hooks";
+import { getProvinces } from "@/store/layouts/actions";
 
 //Components
 import SignIn from "@/components/auth/SignIn";
 import SignUp from "@/components/auth/SignUp";
-import { getProvinces } from "@/store/layouts/actions";
-import { LightLogoSvg } from "@/components/layouts/TheSvgs";
 
 const GetStarted = () => {
   //Redux
@@ -57,7 +56,7 @@ const GetStarted = () => {
                   <div
                     className={`flex-1 duration-500 border ${
                       isSignUp
-                        ? "bg-amber-200 text-zinc-900 border-amber-200"
+                        ? "bg-violet-200 text-zinc-900 border-violet-200"
                         : "bg-white border-zinc-400 text-zinc-500"
                     } font-medium leading-none h-10 rounded-xl flex items-center justify-center cursor-pointer`}
                     onClick={() => setIsSignUp(true)}
@@ -67,7 +66,7 @@ const GetStarted = () => {
                   <div
                     className={`flex-1 duration-500 border ${
                       !isSignUp
-                        ? "bg-amber-200 text-zinc-900 border-amber-200"
+                        ? "bg-violet-200 text-zinc-900 border-violet-200"
                         : "bg-white border-zinc-400 text-zinc-500"
                     } font-medium leading-none h-10 rounded-xl flex items-center justify-center cursor-pointer`}
                     onClick={() => setIsSignUp(false)}

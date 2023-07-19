@@ -124,7 +124,7 @@ const CodeInput: FC<{
         contentRightStyling={false}
         contentRight={
           counter.status ? (
-            <div className="px-2 w-20 rounded-[0.75rem] h-[40px] bg-amber-100 flex justify-center items-center">
+            <div className="px-2 w-20 rounded-[0.75rem] h-[40px] bg-violet-100 flex justify-center items-center">
               <span className="text-sm font-semibold text-black">
                 {convertToPersian(
                   oneToTwoNumber(Math.floor(counter.value / 60)) +

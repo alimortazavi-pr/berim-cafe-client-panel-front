@@ -24,6 +24,7 @@ import About from "@/components/profile/form/About";
 import Address from "@/components/profile/form/Address";
 import SelectLocation from "@/components/profile/form/SelectLocation";
 import UploadLogoModal from "@/components/profile/images/UploadLogoModal";
+import VipRoom from "@/components/profile/form/VipRoom";
 
 //Validators
 import { editProfileValidator } from "@/validators/profile.validator";
@@ -32,7 +33,7 @@ import { editProfileValidator } from "@/validators/profile.validator";
 import { Camera, UserTick } from "iconsax-react";
 import { Formik } from "formik";
 import { toast } from "react-toastify";
-import VipRoom from "@/components/profile/form/VipRoom";
+import UserName from "@/components/profile/form/UserName";
 
 const Profile = () => {
   //Redux
@@ -49,6 +50,7 @@ const Profile = () => {
       ownerName: "",
       name: "",
       authMobile: "",
+      username: "",
       province: "",
       city: "",
       workingHours: [],
@@ -70,6 +72,7 @@ const Profile = () => {
       ownerName: profile?.ownerName || "",
       name: profile?.name || "",
       authMobile: profile?.authMobile || "",
+      username: profile?.username || "",
       province: profile?.province || "",
       city: profile?.city || "",
       workingHours: profile?.workingHours || [],
@@ -143,6 +146,7 @@ const Profile = () => {
                 <CafeName formikProps={formikProps} />
                 <OwnerName formikProps={formikProps} />
                 <AuthMobile formikProps={formikProps} />
+                <UserName formikProps={formikProps} />
                 <ProvincesSelect formikProps={formikProps} />
                 <WorkingHours formikProps={formikProps} />
                 <Phones formikProps={formikProps} />

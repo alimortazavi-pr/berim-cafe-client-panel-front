@@ -153,7 +153,7 @@ const Reservations: FC<reservationsProps> = ({ reservations }) => {
                           <span
                             onClick={() => toggleReservationFunc(reservation)}
                           >
-                            <ClipboardClose className="w-5 md:w-6 h-fit text-amber-500 cursor-pointer" />
+                            <ClipboardClose className="w-5 md:w-6 h-fit text-violet-500 cursor-pointer" />
                           </span>
                         </Tooltip>
                       )}

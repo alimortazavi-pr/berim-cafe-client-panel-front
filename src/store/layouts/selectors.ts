@@ -12,3 +12,7 @@ export function asideStatusSelector(state: RootState): boolean {
 export function statisticsSelector(state: RootState): IStatistics {
   return state.layouts.statistics;
 }
+
+export function iconsSelector(state: RootState): string[] {
+  return state.layouts.icons;
+}

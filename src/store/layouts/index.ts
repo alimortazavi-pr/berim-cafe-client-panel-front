@@ -8,6 +8,7 @@ import reducers from "@/store/layouts/reducers";
 
 const initialState: ILayoutsState = {
   provinces: [],
+  icons: [],
   asideStatus: false,
   statistics: {
     itemsCount: 0,

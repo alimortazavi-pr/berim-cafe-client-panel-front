@@ -8,6 +8,7 @@ import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { cafeSelector } from "@/store/profile/selectors";
 import { asideStatusSelector } from "@/store/layouts/selectors";
 import { toggleAside } from "@/store/layouts/actions";
+import { logOut } from "@/store/auth/actions";
 
 //Tools
 import { DarkLogoSvg } from "./TheSvgs";
@@ -17,9 +18,11 @@ import {
   Gallery,
   Home,
   Layer,
+  LogoutCurve,
   MenuBoard,
   Messages1,
   Reserve,
+  Shop,
 } from "iconsax-react";
 
 const TheAside = () => {
@@ -34,6 +37,11 @@ const TheAside = () => {
   //Functions
   function toggleAsideFunc() {
     dispatch(toggleAside(!asideStatus));
+  }
+
+  async function logOutFunc() {
+    await dispatch(logOut());
+    router.push("/get-started");
   }
 
   return (
@@ -104,7 +112,7 @@ const TheAside = () => {
             <span className="leading-none">منو</span>
           </Link>
         </li>
-        <li className="w-full">
+        {/* <li className="w-full">
           <Link
             href={"/reservations"}
             className={`flex items-center gap-2 p-4 rounded-xl w-full duration-300 text-zinc-900 hover:bg-zinc-100 ${
@@ -116,7 +124,7 @@ const TheAside = () => {
             <Reserve className="w-5 h-5 text-zinc-600" variant="Bold" />
             <span className="leading-none">رزرو‌ ها</span>
           </Link>
-        </li>
+        </li> */}
         <li className="w-full">
           <Link
             href={"/notifications"}
@@ -129,6 +137,27 @@ const TheAside = () => {
             <Messages1 className="w-5 h-5 text-zinc-600" variant="Bold" />
             <span className="leading-none">اطلاع‌رسانی ها</span>
           </Link>
+        </li>
+        <li className="w-full">
+          <Link
+            href={"/shop"}
+            className={`flex items-center gap-2 p-4 rounded-xl w-full duration-300 text-zinc-900 hover:bg-zinc-100 ${
+              router.pathname.includes("shop")
+                ? "bg-zinc-100"
+                : "bg-white"
+            }`}
+          >
+            <Shop className="w-5 h-5 text-zinc-600" variant="Bold" />
+            <span className="leading-none">خرید استند بارکد منو</span>
+          </Link>
+        </li>
+        <li className="w-full cursor-pointer" onClick={logOutFunc}>
+          <span
+            className={`flex items-center gap-2 p-4 rounded-xl w-full duration-300 text-red-500 hover:bg-red-200 bg-white`}
+          >
+            <LogoutCurve className="w-5 h-5 text-red-500" variant="Bold" />
+            <span className="leading-none">خروج</span>
+          </span>
         </li>
       </ul>
     </div>

@@ -48,7 +48,6 @@ export function editProfile(form: IEditProfileForm): AppThunk {
           },
         });
         await dispatch(setProfile(res.data.cafe));
-        saveDataToLocal(getState().auth.token as string, res.data.cafe);
       }
     } catch (err: any) {
       console.log(err);
@@ -68,7 +67,6 @@ export function uploadLogo(form: FormData): AppThunk {
           },
         });
         await dispatch(setProfile(res.data.cafe));
-        saveDataToLocal(getState().auth.token as string, res.data.cafe);
       }
     } catch (err: any) {
       console.log(err);
@@ -88,7 +86,6 @@ export function uploadImage(form: FormData): AppThunk {
           },
         });
         await dispatch(setProfile(res.data.cafe));
-        saveDataToLocal(getState().auth.token as string, res.data.cafe);
       }
     } catch (err: any) {
       console.log(err);
@@ -112,7 +109,6 @@ export function removeImage(image: string): AppThunk {
           }
         );
         await dispatch(setProfile(res.data.cafe));
-        saveDataToLocal(getState().auth.token as string, res.data.cafe);
       }
     } catch (err: any) {
       console.log(err);
@@ -137,7 +133,7 @@ export function changeMobile(form: IChangeMobileForm): AppThunk {
             token: res.data.token,
           })
         );
-        saveDataToLocal(res.data.token, res.data.cafe);
+        saveDataToLocal(res.data.token);
       }
     } catch (err: any) {
       throw new Error(err.response.data.message);

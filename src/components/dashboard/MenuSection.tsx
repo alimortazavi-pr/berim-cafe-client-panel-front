@@ -15,7 +15,7 @@ const MenuSection = () => {
   const statistics = useAppSelector(statisticsSelector);
 
   return (
-    <div className="col-span-12 md:col-span-6 xl:col-span-4 bg-amber-100 shadow rounded-3xl p-5 flex flex-col justify-between">
+    <div className="col-span-12 md:col-span-6 xl:col-span-4 bg-violet-100 shadow rounded-3xl p-5 flex flex-col justify-between">
       <div>
         <div className="mb-3">
           <div className="text-zinc-800 text-base mb-1 flex items-center gap-1">
@@ -39,7 +39,7 @@ const MenuSection = () => {
       <div className="flex items-center justify-end">
         <Link
           href={`/menu`}
-          className="bg-white rounded-lg p-1 duration-200 hover:bg-amber-200 hover:scale-90"
+          className="bg-white rounded-lg p-1 duration-200 hover:bg-violet-200 hover:scale-90"
         >
           <Setting2
             className="text-zinc-800 w-6 h-6 md:w-8 md:h-8"

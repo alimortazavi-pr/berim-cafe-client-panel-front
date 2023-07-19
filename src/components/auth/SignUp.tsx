@@ -15,6 +15,7 @@ import OwnerName from "./OwnerName";
 import ProvincesSelect from "./ProvincesSelect";
 import AuthMobile from "./AuthMobile";
 import CodeInput from "./CodeInput";
+import UserName from "./UserName";
 
 //Validators
 import { Formik } from "formik";
@@ -38,6 +39,7 @@ const SignUp = () => {
     province: "",
     city: "",
     authMobile: "",
+    username: "",
     code: "",
   };
 
@@ -73,6 +75,7 @@ const SignUp = () => {
           <CafeName formikProps={formikProps} />
           <OwnerName formikProps={formikProps} />
           <ProvincesSelect formikProps={formikProps} />
+          <UserName formikProps={formikProps} />
           <AuthMobile formikProps={formikProps} />
           <CodeInput formikProps={formikProps} />
           <div className="mt-4">

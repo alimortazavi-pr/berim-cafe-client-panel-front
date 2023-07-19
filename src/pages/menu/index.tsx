@@ -1,6 +1,6 @@
 import { GetServerSideProps } from "next";
 import Head from "next/head";
-import { FC, useEffect } from "react";
+import { FC, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Tooltip, useModal } from "@nextui-org/react";
 
@@ -24,12 +24,13 @@ import NavBar from "@/components/layouts/NavBar";
 import SingleItem from "@/components/menu/SingleItem";
 import SingleCategory from "@/components/menu/SingleCategory";
 import CreateCategoryModal from "@/components/categories/CreateCategoryModal";
+import EditCategoryModal from "@/components/categories/EditCategoryModal";
+import QRCode from "@/components/menu/QRCode";
 
 //Tools
 import api from "@/common/api";
 import { AddSquare } from "iconsax-react";
 import { toast } from "react-toastify";
-import EditCategoryModal from "@/components/categories/EditCategoryModal";
 
 const Menu: FC<menuProps> = ({ items, categories, errorMessage }) => {
   //Redux
@@ -72,24 +73,28 @@ const Menu: FC<menuProps> = ({ items, categories, errorMessage }) => {
         <title>بریم کافه |‌ مدیریت منو</title>
       </Head>
       <NavBar title="مدیریت منو" />
-      <div className="flex max-w-full h-fit">
-        <div className="text-base text-zinc-800 font-semibold min-w-fit border-2 border-l-0 border-zinc-300 rounded-r-xl min-h-full flex items-center justify-center px-2 shadow">
-          <span>دسته بندی ها:</span>
-        </div>
-        <div className="flex items-center gap-2 flex-nowrap overflow-x-auto px-2">
-          {globalCategories?.map((category) => (
-            <SingleCategory key={category._id} category={category} />
-          ))}
-        </div>
-        <Tooltip content={"افزودن دسته بندی"}>
-          <div
-            className="text-zinc-800 min-w-fit border-2 border-r-0 border-zinc-300 rounded-l-xl min-h-full flex items-center justify-center px-2 shadow duration-200 hover:bg-zinc-300 cursor-pointer"
-            onClick={() => setVisible(true)}
-          >
-            <AddSquare className="w-8 h-fit" />
+      <div className="max-w-full flex flex-col xl:flex-row items-stretch gap-2">
+        <QRCode />
+        <div className="flex max-w-full h-fit">
+          <div className="text-base text-zinc-800 font-semibold min-w-fit border-2 border-l-0 border-zinc-300 rounded-r-xl min-h-full flex items-center justify-center px-2 shadow">
+            <span>دسته بندی ها:</span>
           </div>
-        </Tooltip>
+          <div className="flex items-center gap-2 flex-nowrap overflow-x-auto px-2">
+            {globalCategories?.map((category) => (
+              <SingleCategory key={category._id} category={category} />
+            ))}
+          </div>
+          <Tooltip content={"افزودن دسته بندی"}>
+            <div
+              className="text-zinc-800 min-w-fit border-2 border-r-0 border-zinc-300 rounded-l-xl min-h-full flex items-center justify-center px-2 shadow duration-200 hover:bg-zinc-300 cursor-pointer"
+              onClick={() => setVisible(true)}
+            >
+              <AddSquare className="w-8 h-fit" />
+            </div>
+          </Tooltip>
+        </div>
       </div>
+
       <hr className="h-[1px] bg-zinc-200 my-5" />
       <div className="grid grid-cols-12 gap-3">
         {globalItems?.map((item) => (
@@ -97,9 +102,9 @@ const Menu: FC<menuProps> = ({ items, categories, errorMessage }) => {
         ))}
         <Link
           href={`/menu/create-item`}
-          className="col-span-6 md:col-span-4 xl:col-span-3 flex items-center justify-center border border-dashed border-amber-400 rounded-3xl aspect-square"
+          className="col-span-6 md:col-span-4 xl:col-span-3 flex items-center justify-center border border-dashed border-violet-400 rounded-3xl aspect-square"
         >
-          <div className="text-amber-400 flex flex-col items-center">
+          <div className="text-violet-400 flex flex-col items-center">
             <div className="font-bold text-lg md:text-2xl xl:text-3xl mb-1">
               <span>ایجاد آیتم</span>
             </div>

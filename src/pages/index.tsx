@@ -14,7 +14,7 @@ import { setStatistics } from "@/store/layouts/actions";
 import NavBar from "@/components/layouts/NavBar";
 import ProfileSection from "@/components/dashboard/ProfileSection";
 import MenuSection from "@/components/dashboard/MenuSection";
-import CategoriesAndReservationsSection from "@/components/dashboard/CategoriesAndReservationsSection";
+import CategoriesSection from "@/components/dashboard/CategoriesSection";
 import ImagesSection from "@/components/dashboard/ImagesSection";
 
 //Tools
@@ -38,7 +38,7 @@ const Dashboard: FC<dashboardProps> = ({ statistics }) => {
       <div className="grid grid-cols-12 gap-3">
         <ProfileSection />
         <MenuSection />
-        <CategoriesAndReservationsSection />
+        <CategoriesSection />
         <ImagesSection />
       </div>
     </div>

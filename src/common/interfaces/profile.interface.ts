@@ -9,13 +9,14 @@ export interface IProfile {
   ownerName: string;
   name: string;
   authMobile: string;
+  username: string;
   province: string;
   city: string;
   logo?: string;
   phones: string[];
   workingHours: ISingleWorkingHour[];
   address: string;
-  about: string;
+  about?: string;
   location: [number, number];
   rate: number;
   menuViewsCount: number;
@@ -30,6 +31,7 @@ export interface IEditProfileForm {
   ownerName: string;
   name: string;
   authMobile: string;
+  username: string;
   province: string;
   city: string;
   about: string;

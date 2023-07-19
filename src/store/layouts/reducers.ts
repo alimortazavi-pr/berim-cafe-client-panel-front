@@ -20,6 +20,16 @@ const reducers = {
     };
   },
 
+  setIcons: (
+    state: ILayoutsState,
+    action: PayloadAction<{ icons: string[] }>
+  ): ILayoutsState => {
+    return {
+      ...state,
+      icons: action.payload.icons,
+    };
+  },
+
   toggleAside: (
     state: ILayoutsState,
     action: PayloadAction<boolean>

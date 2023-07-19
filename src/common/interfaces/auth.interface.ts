@@ -10,6 +10,7 @@ export interface ISignUpForm {
   province: string;
   city: string;
   authMobile: string | number;
+  username: string;
   code: string;
 }
 

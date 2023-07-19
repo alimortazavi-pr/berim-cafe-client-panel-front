@@ -32,6 +32,8 @@ export function autoLogin(token: string): AppThunk {
       );
       await dispatch(setProfile(res.data.cafe));
     } catch (err: any) {
+      console.log(err);
+      
       if (err.response?.status === 401) {
         dispatch(logOut());
       } else {
@@ -61,7 +63,7 @@ export function signUp(form: ISignUpForm): AppThunk {
         })
       );
       dispatch(setProfile(res.data.cafe));
-      saveDataToLocal(res.data.token, res.data.cafe);
+      saveDataToLocal(res.data.token);
     } catch (err: any) {
       throw new Error(err.response.data?.message);
     }
@@ -77,8 +79,8 @@ export function signIn(form: ISignInForm): AppThunk {
           token: res.data.token,
         })
       );
-      dispatch(setProfile(res.data.cafe));
-      saveDataToLocal(res.data.token, res.data.cafe);
+      await dispatch(setProfile(res.data.cafe));
+      await saveDataToLocal(res.data.token);
     } catch (err: any) {
       throw new Error(err.response.data.message);
     }
@@ -86,12 +88,11 @@ export function signIn(form: ISignInForm): AppThunk {
 }
 
 //Functions
-export function saveDataToLocal(token: string, cafe: object) {
-  Cookies.set(
+export async function saveDataToLocal(token: string) {
+  await Cookies.set(
     "cafeAuthorization",
     JSON.stringify({
       token: token,
-      cafe: cafe,
     }),
     { expires: 90 }
   );

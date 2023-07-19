@@ -8,6 +8,6 @@ const withPWA = require("next-pwa")({
 module.exports = withPWA({
   reactStrictMode: true,
   images: {
-    domains: ["localhost", "api.berimcafe.ir"],
+    domains: ["localhost", "api.berimcafe.ir", "cloud.berimcafe.ir"],
   },
 });

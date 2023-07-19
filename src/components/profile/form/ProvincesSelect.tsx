@@ -42,7 +42,7 @@ const ProvincesSelect: FC<{ formikProps: FormikProps<IEditProfileForm> }> = ({
   }
 
   return (
-    <div className="col-span-12 lg:col-span-6">
+    <div className="col-span-12">
       <div
         className={`mb-[0.375rem] ${
           errors.city && touched.city ? "text-[#F31260]" : "text-black"

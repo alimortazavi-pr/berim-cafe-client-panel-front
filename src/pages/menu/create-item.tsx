@@ -18,6 +18,7 @@ import Title from "@/components/menu/form/Title";
 import Price from "@/components/menu/form/Price";
 import CategoriesSelect from "@/components/menu/form/CategoriesSelect";
 import ChooseThumbnail from "@/components/menu/form/ThumbnailImage";
+import Description from "@/components/menu/form/Description";
 
 //Validators
 import { createAndEditItemValidator } from "@/validators/menu.validator";
@@ -40,6 +41,7 @@ const CreateItem = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [initialItemFrom, setInitialItemFrom] = useState<IItemForm>({
     title: "",
+    description: "",
     category: "",
     price: "",
     thumbnailImage: "",
@@ -60,6 +62,7 @@ const CreateItem = () => {
     try {
       const formData = new FormData();
       formData.append("title", values.title);
+      formData.append("description", values.description);
       formData.append("category", values.category);
       formData.append(
         "price",
@@ -107,6 +110,7 @@ const CreateItem = () => {
                   </div>
                 </div>
                 <ChooseThumbnail formikProps={formikProps} />
+                <Description formikProps={formikProps} />
                 <div className="flex items-center justify-center col-span-12">
                   <Button
                     ghost

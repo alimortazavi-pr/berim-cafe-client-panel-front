@@ -20,6 +20,7 @@ import Title from "@/components/menu/form/Title";
 import Price from "@/components/menu/form/Price";
 import CategoriesSelect from "@/components/menu/form/CategoriesSelect";
 import ChooseThumbnail from "@/components/menu/form/ThumbnailImage";
+import Description from "@/components/menu/form/Description";
 
 //Validators
 import { createAndEditItemValidator } from "@/validators/menu.validator";
@@ -45,6 +46,7 @@ const EditItem: FC<editItemProps> = ({ item }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [initialItemFrom, setInitialItemFrom] = useState<IItemForm>({
     title: "",
+    description: "",
     category: "",
     price: "",
     thumbnailImage: "",
@@ -59,6 +61,7 @@ const EditItem: FC<editItemProps> = ({ item }) => {
     if (item._id) {
       setInitialItemFrom({
         title: item.title,
+        description: item.description || "",
         category: item.category._id as string,
         price: convertToPersian(
           priceGenerator(convertAPToEnglish(item.price.replace(/\,/g, "")))
@@ -78,6 +81,7 @@ const EditItem: FC<editItemProps> = ({ item }) => {
     try {
       const formData = new FormData();
       formData.append("title", values.title);
+      formData.append("description", values.description);
       formData.append("category", values.category);
       formData.append(
         "price",
@@ -125,6 +129,7 @@ const EditItem: FC<editItemProps> = ({ item }) => {
                   </div>
                 </div>
                 <ChooseThumbnail formikProps={formikProps} />
+                <Description formikProps={formikProps} />
                 <div className="flex items-center justify-center col-span-12">
                   <Button
                     ghost

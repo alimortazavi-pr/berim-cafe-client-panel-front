@@ -9,6 +9,7 @@ export interface IItem {
   cafe: string;
   category: ICategory;
   title: string;
+  description?: string;
   price: string;
   thumbnailImage?: string;
   deleted: boolean;
@@ -16,6 +17,7 @@ export interface IItem {
 
 export interface IItemForm {
   title: string;
+  description: string;
   category: string;
   price: string;
   thumbnailImage: string | File;

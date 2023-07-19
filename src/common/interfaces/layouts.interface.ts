@@ -1,6 +1,7 @@
 export interface ILayoutsState {
   asideStatus: boolean;
   provinces: IProvince[];
+  icons: string[];
   statistics: IStatistics;
 }
 
