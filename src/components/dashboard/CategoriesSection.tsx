@@ -21,7 +21,7 @@ const CategoriesSection = () => {
             <span>تعداد دسته بندی ها</span>
           </div>
           <div className="border-zinc-800 text-5xl font-bold flex-1 text-left">
-            <span>{convertToPersian(statistics.categoriesCount || 0)}</span>
+            <span>{convertToPersian(statistics?.categoriesCount || 0)}</span>
           </div>
         </div>
       </div>

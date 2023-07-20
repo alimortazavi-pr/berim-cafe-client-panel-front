@@ -29,7 +29,7 @@ const NavBar: FC<navBarProps> = ({ title }) => {
           className="p-1 border border-zinc-800 rounded-lg hover:bg-zinc-200 hover:scale-90 duration-300 lg:hidden"
           onClick={toggleAsideFunc}
         >
-          <HambergerMenu className="w-4 h-fit" />
+          <HambergerMenu className="w-4 h-4" />
         </div>
         <div className="text-zinc-800 font-semibold md:text-lg lg:text-xl xl:text-2xl">
           <span>{title}</span>

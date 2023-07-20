@@ -57,7 +57,7 @@ const TheAside = () => {
         <CloseSquare className="w-6 h-fit" />
       </div>
       <div className="w-full flex justify-center mb-14">
-        <DarkLogoSvg className={"w-24 h-fit"} />
+        <DarkLogoSvg className={"w-24 h-[75px]"} />
       </div>
       <div className="flex flex-col items-center mb-10">
         <div className="relative w-[75px] h-[75px] border rounded-full border-zinc-800 mb-2">

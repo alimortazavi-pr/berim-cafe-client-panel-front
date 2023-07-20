@@ -46,11 +46,11 @@ const Menu: FC<menuProps> = ({ items, categories, errorMessage }) => {
 
   //Effects
   useEffect(() => {
-    dispatch(setItems(items));
+    dispatch(setItems(items || []));
   }, [items]);
 
   useEffect(() => {
-    dispatch(setCategories(categories));
+    dispatch(setCategories(categories || []));
   }, [categories]);
 
   useEffect(() => {
@@ -75,7 +75,7 @@ const Menu: FC<menuProps> = ({ items, categories, errorMessage }) => {
       <NavBar title="مدیریت منو" />
       <div className="max-w-full flex flex-col xl:flex-row items-stretch gap-2">
         <QRCode />
-        <div className="flex max-w-full h-fit">
+        <div className="flex max-w-full h-fit min-h-[50px]">
           <div className="text-base text-zinc-800 font-semibold min-w-fit border-2 border-l-0 border-zinc-300 rounded-r-xl min-h-full flex items-center justify-center px-2 shadow">
             <span>دسته بندی ها:</span>
           </div>

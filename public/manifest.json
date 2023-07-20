@@ -1,7 +1,7 @@
 {
   "name": "بریم کافه",
   "short_name": "بریم کافه",
-  "theme_color": "#fef08a",
+  "theme_color": "#c4b5fd",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
