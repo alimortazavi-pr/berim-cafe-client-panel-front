@@ -118,7 +118,7 @@ const Profile = () => {
             <div className="w-24 h-24 rounded-full bg-zinc-100 relative">
               {profile?.logo ? (
                 <Image
-                  src={`http://localhost:7777/${profile.logo}`}
+                  src={`https://api-panel.berimcafe.org/${profile.logo}`}
                   alt=""
                   fill
                   className="rounded-full object-cover object-center"

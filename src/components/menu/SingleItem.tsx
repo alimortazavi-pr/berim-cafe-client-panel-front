@@ -18,7 +18,7 @@ const SingleItem: FC<singleItemProps> = ({ item }) => {
     >
       {item.thumbnailImage ? (
         <Image
-          src={`http://localhost:7777${item.thumbnailImage}`}
+          src={`https://api-panel.berimcafe.org${item.thumbnailImage}`}
           fill
           alt=""
           className="w-full h-full rounded-3xl object-cover object-center"

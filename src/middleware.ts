@@ -15,7 +15,7 @@ export async function middleware(request: NextRequest) {
     const token = transformedData.token;
     try {
       const res = await fetch(
-        "http://localhost:7777/v1/auth/check",
+        "https://api-panel.berimcafe.org/v1/auth/check",
         {
           headers: {
             Authorization: `Bearer ${token}`,

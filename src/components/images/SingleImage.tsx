@@ -43,7 +43,7 @@ const SingleImage: FC<singleImageProps> = ({ image }) => {
       className={`col-span-6 md:col-span-4 xl:col-span-3 flex items-center justify-center rounded-3xl aspect-square relative`}
     >
       <Image
-        src={`http:/localhost:7777${image}`}
+        src={`https://api-panel.berimcafe.org${image}`}
         fill
         alt=""
         className="rounded-3xl object-cover object-center"
