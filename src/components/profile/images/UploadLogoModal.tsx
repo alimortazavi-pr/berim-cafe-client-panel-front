@@ -96,14 +96,14 @@ const UploadLogoModal: FC<nextUIModalProps> = ({ bindings, setVisible }) => {
               className="bg-white absolute z-20 top-3 left-2 rounded-full"
               onClick={destroyPic}
             >
-              <CloseCircle className="w-6 h-fit text-red-400 cursor-pointer" />
+              <CloseCircle className="w-6 h-6 text-red-400 cursor-pointer" />
             </div>
           ) : null}
           <label
             htmlFor="logo"
             className="z-10 w-full h-full absolute bg-zinc-800/20 text-zinc-500 hover:bg-zinc-800/40 hover:text-zinc-300 rounded-full flex items-center justify-center cursor-pointer duration-300"
           >
-            <Camera className="w-7 h-fit" />
+            <Camera className="w-7 h-7" />
           </label>
           <input
             type="file"

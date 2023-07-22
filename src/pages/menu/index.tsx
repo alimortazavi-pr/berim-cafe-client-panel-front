@@ -89,7 +89,7 @@ const Menu: FC<menuProps> = ({ items, categories, errorMessage }) => {
               className="text-zinc-800 min-w-fit border-2 border-r-0 border-zinc-300 rounded-l-xl min-h-full flex items-center justify-center px-2 shadow duration-200 hover:bg-zinc-300 cursor-pointer"
               onClick={() => setVisible(true)}
             >
-              <AddSquare className="w-8 h-fit" />
+              <AddSquare className="w-8 h-8" />
             </div>
           </Tooltip>
         </div>

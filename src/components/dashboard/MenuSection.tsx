@@ -19,7 +19,7 @@ const MenuSection = () => {
       <div>
         <div className="mb-3">
           <div className="text-zinc-800 text-base mb-1 flex items-center gap-1">
-            <Eye className="w-6 h-fit" variant="Bulk" />
+            <Eye className="w-6 h-6" variant="Bulk" />
             <span>تعداد بازدید منو</span>
           </div>
           <div className="border-zinc-800 text-5xl font-bold text-left">
@@ -28,7 +28,7 @@ const MenuSection = () => {
         </div>
         <div className="mb-3">
           <div className="text-zinc-800 text-base mb-1 flex items-center gap-1">
-            <ReceiptItem className="w-6 h-fit" variant="Bulk" />
+            <ReceiptItem className="w-6 h-6" variant="Bulk" />
             <span>تعداد آیتم های منو</span>
           </div>
           <div className="border-zinc-800 mb-1 text-5xl font-bold text-left">

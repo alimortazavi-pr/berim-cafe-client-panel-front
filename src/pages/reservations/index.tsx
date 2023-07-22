@@ -145,7 +145,7 @@ const Reservations: FC<reservationsProps> = ({ reservations }) => {
                           <span
                             onClick={() => toggleReservationFunc(reservation)}
                           >
-                            <Reserve className="w-5 md:w-6 h-fit text-green-500 cursor-pointer" />
+                            <Reserve className="w-5 md:w-6 h-5 md:h-6 text-green-500 cursor-pointer" />
                           </span>
                         </Tooltip>
                       ) : (
@@ -153,7 +153,7 @@ const Reservations: FC<reservationsProps> = ({ reservations }) => {
                           <span
                             onClick={() => toggleReservationFunc(reservation)}
                           >
-                            <ClipboardClose className="w-5 md:w-6 h-fit text-violet-500 cursor-pointer" />
+                            <ClipboardClose className="w-5 md:w-6 h-5 md:h-6 text-violet-500 cursor-pointer" />
                           </span>
                         </Tooltip>
                       )}
@@ -164,7 +164,7 @@ const Reservations: FC<reservationsProps> = ({ reservations }) => {
                             deleteReservation(reservation._id as string)
                           }
                         >
-                          <Trash className="w-5 md:w-6 h-fit text-rose-500 cursor-pointer" />
+                          <Trash className="w-5 md:w-6 h-5 md:h-6 text-rose-500 cursor-pointer" />
                         </span>
                       </Tooltip>
                     </div>

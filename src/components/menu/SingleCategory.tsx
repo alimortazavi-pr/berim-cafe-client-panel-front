@@ -72,7 +72,7 @@ const SingleCategory: FC<singleCategoryProps> = ({ category }) => {
             }`}
             onClick={removeFilter}
           >
-            <CloseSquare className="w-5 h-fit" />
+            <CloseSquare className="w-5 h-5" />
           </span>
         </Tooltip>
       ) : null}
@@ -86,7 +86,7 @@ const SingleCategory: FC<singleCategoryProps> = ({ category }) => {
           }`}
           onClick={setEditingCategory}
         >
-          <Edit className="w-5 h-fit" />
+          <Edit className="w-5 h-5" />
         </span>
       </Tooltip>
     </div>

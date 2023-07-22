@@ -54,7 +54,7 @@ const TheAside = () => {
         className="lg:hidden absolute top-2 left-2 text-zinc-800 hover:text-zinc-600 hover:scale-90 duration-300"
         onClick={toggleAsideFunc}
       >
-        <CloseSquare className="w-6 h-fit" />
+        <CloseSquare className="w-6 h-6" />
       </div>
       <div className="w-full flex justify-center mb-14">
         <DarkLogoSvg className={"w-24 h-[75px]"} />

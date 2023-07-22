@@ -17,7 +17,7 @@ const CategoriesSection = () => {
       <div className="">
         <div className="mb-2">
           <div className="text-zinc-800 text-base flex items-center gap-1">
-            <Category className="w-6 h-fit" variant="Bulk" />
+            <Category className="w-6 h-6" variant="Bulk" />
             <span>تعداد دسته بندی ها</span>
           </div>
           <div className="border-zinc-800 text-5xl font-bold flex-1 text-left">

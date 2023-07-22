@@ -128,7 +128,7 @@ const Profile = () => {
                 className="z-10 w-full h-full absolute bg-zinc-800/20 text-zinc-500 hover:bg-zinc-800/40 hover:text-zinc-300 rounded-full flex items-center justify-center cursor-pointer duration-300"
                 onClick={() => setVisible(true)}
               >
-                <Camera className="w-7 h-fit" />
+                <Camera className="w-7 h-7" />
               </div>
             </div>
           </div>

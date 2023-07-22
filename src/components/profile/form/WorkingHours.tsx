@@ -121,7 +121,7 @@ const WorkingHours: FC<{ formikProps: FormikProps<IEditProfileForm> }> = ({
             onClick={() => setIsAddingWH(true)}
           >
             <span className="leading-none">افزودن ساعت کاری</span>
-            <AddCircle className="w-4 h-fit" />
+            <AddCircle className="w-4 h-4" />
           </div>
         )}
         {values.workingHours?.length > 0 ? (
@@ -129,7 +129,7 @@ const WorkingHours: FC<{ formikProps: FormikProps<IEditProfileForm> }> = ({
             {values.workingHours.map((WH, i) => (
               <li key={i} className="flex items-start gap-1">
                 <div className="cursor-pointer" onClick={() => removeWH(WH)}>
-                  <Trash className="w-4 h-fit text-rose-400" />
+                  <Trash className="w-4 h-4 text-rose-400" />
                 </div>
                 <div className="flex items-center gap-1 text-sm">
                   <div className="ml-0.5">

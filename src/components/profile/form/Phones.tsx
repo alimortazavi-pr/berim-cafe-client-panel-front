@@ -103,7 +103,7 @@ const Phones: FC<{ formikProps: FormikProps<IEditProfileForm> }> = ({
             onClick={() => setIsAddingPhone(true)}
           >
             <span className="leading-none">افزودن شماره تماس</span>
-            <AddCircle className="w-4 h-fit" />
+            <AddCircle className="w-4 h-4" />
           </div>
         )}
         {values.phones?.length > 0 ? (
@@ -114,7 +114,7 @@ const Phones: FC<{ formikProps: FormikProps<IEditProfileForm> }> = ({
                   className="cursor-pointer"
                   onClick={() => removePhone(phone)}
                 >
-                  <Trash className="w-4 h-fit text-rose-400" />
+                  <Trash className="w-4 h-4 text-rose-400" />
                 </div>
                 <div className="flex items-center gap-1 text-sm">
                   <div className="ml-0.5">

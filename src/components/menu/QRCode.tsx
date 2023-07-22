@@ -98,7 +98,7 @@ const QRCode = () => {
         className="text-lg font-bold text-zinc-800 flex items-center h-12 mb-2 xl:h-full px-4 bg-transparent border-2 border-zinc-600 rounded-xl hover:text-white hover:bg-zinc-800 hover:border-white duration-500"
         onClick={downloadQRCode}
       >
-        <ScanBarcode className="w-6 h-fit ml-1" variant="Bold" />
+        <ScanBarcode className="w-6 h-6 ml-1" variant="Bold" />
         دریافت بارکد منو
       </button>
     </div>
