@@ -20,6 +20,7 @@ import { signInValidator } from "@/validators/auth.validator";
 //Tools
 import { LoginCurve } from "iconsax-react";
 import { toast } from "react-toastify";
+import convertAPToEnglish from "ap-to-english";
 
 const SignIn = () => {
   //Redux
@@ -41,7 +42,13 @@ const SignIn = () => {
   async function formSubmitHandler(values: ISignInForm) {
     setIsLoading(true);
     try {
-      await dispatch(signIn(values));
+      await dispatch(
+        signIn({
+          ...values,
+          authMobile: convertAPToEnglish(values.authMobile),
+          code: convertAPToEnglish(values.code),
+        })
+      );
       toast.success("باموفقیت وارد شدید", {
         position: toast.POSITION.TOP_CENTER,
       });

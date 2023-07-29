@@ -24,6 +24,7 @@ import { signUpValidator } from "@/validators/auth.validator";
 //Tools
 import { LoginCurve } from "iconsax-react";
 import { toast } from "react-toastify";
+import convertAPToEnglish from "ap-to-english";
 
 const SignUp = () => {
   //Redux
@@ -50,7 +51,13 @@ const SignUp = () => {
   async function formSubmitHandler(values: ISignUpForm) {
     setIsLoading(true);
     try {
-      await dispatch(signUp(values));
+      await dispatch(
+        signUp({
+          ...values,
+          authMobile: convertAPToEnglish(values.authMobile),
+          code: convertAPToEnglish(values.code),
+        })
+      );
       toast.success("ثبت نام شما با موفقیت انجام شد", {
         position: toast.POSITION.TOP_CENTER,
       });

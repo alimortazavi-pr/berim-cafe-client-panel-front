@@ -46,11 +46,11 @@ const Menu: FC<menuProps> = ({ items, categories, errorMessage }) => {
 
   //Effects
   useEffect(() => {
-    dispatch(setItems(items || []));
+    setItemsFunc();
   }, [items]);
 
   useEffect(() => {
-    dispatch(setCategories(categories || []));
+    setCategoriesFunc();
   }, [categories]);
 
   useEffect(() => {
@@ -66,6 +66,15 @@ const Menu: FC<menuProps> = ({ items, categories, errorMessage }) => {
       });
     }
   }, [errorMessage]);
+
+  //Functions
+  async function setItemsFunc() {
+    await dispatch(setItems(items || []));
+  }
+
+  async function setCategoriesFunc() {
+    await dispatch(setCategories(categories || []));
+  }
 
   return (
     <div className="w-full">
@@ -97,9 +106,6 @@ const Menu: FC<menuProps> = ({ items, categories, errorMessage }) => {
 
       <hr className="h-[1px] bg-zinc-200 my-5" />
       <div className="grid grid-cols-12 gap-3">
-        {globalItems?.map((item) => (
-          <SingleItem key={item._id} item={item} />
-        ))}
         <Link
           href={`/menu/create-item`}
           className="col-span-6 md:col-span-4 xl:col-span-3 flex items-center justify-center border border-dashed border-violet-400 rounded-3xl aspect-square"
@@ -116,6 +122,9 @@ const Menu: FC<menuProps> = ({ items, categories, errorMessage }) => {
             </div>
           </div>
         </Link>
+        {globalItems?.map((item) => (
+          <SingleItem key={item._id} item={item} />
+        ))}
       </div>
       <CreateCategoryModal bindings={bindings} setVisible={setVisible} />
       <EditCategoryModal

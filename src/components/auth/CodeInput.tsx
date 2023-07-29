@@ -45,7 +45,7 @@ const CodeInput: FC<{
     if (!e.target.value) {
       formikProps.setFieldValue(
         "code",
-        convertAPToEnglish(e.target.value.replace(/\,/g, ""))
+        convertToPersian(convertAPToEnglish(e.target.value.replace(/\,/g, "")))
       );
     } else if (
       !convertAPToEnglish(e.target.value.replace(/\,/g, "")).match(/^-?\d+$/)
@@ -54,7 +54,7 @@ const CodeInput: FC<{
     } else {
       formikProps.setFieldValue(
         "code",
-        convertAPToEnglish(e.target.value.replace(/\,/g, ""))
+        convertToPersian(convertAPToEnglish(e.target.value.replace(/\,/g, "")))
       );
     }
   }

@@ -1,6 +1,7 @@
 import { AppThunk } from "@/store";
 
 //Actions of other store
+import { setItems } from "../menu/actions";
 
 //Reducer
 import { categoriesReducer } from "@/store/categories";
@@ -101,6 +102,13 @@ export function softDeleteCategory(categoryId: string): AppThunk {
               (category) => category._id !== categoryId
             )
           )
+        );
+        await dispatch(
+          setItems([
+            ...getState().menu.items.filter(
+              (item) => item.category._id !== categoryId
+            ),
+          ])
         );
       }
     } catch (err: any) {

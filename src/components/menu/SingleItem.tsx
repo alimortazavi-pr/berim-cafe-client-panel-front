@@ -1,17 +1,32 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FC } from "react";
-import { Button } from "@nextui-org/react";
+import { FC, useState } from "react";
+import { Button, Popover } from "@nextui-org/react";
 
 //Types
 import { singleItemProps } from "@/common/types/menu.type";
 
+//Redux
+import { useAppDispatch } from "@/store/hooks";
+import { softDeleteItem } from "@/store/menu/actions";
+
 //Tools
 import convertToPersian from "num-to-persian";
 import priceGenerator from "price-generator";
-import { Edit2 } from "iconsax-react";
+import { Edit2, Trash } from "iconsax-react";
 
 const SingleItem: FC<singleItemProps> = ({ item }) => {
+  //Redux
+  const dispatch = useAppDispatch();
+
+  //States
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  //Functions
+  async function deleteItemFunc() {
+    await dispatch(softDeleteItem(item._id as string));
+  }
+
   return (
     <div
       className={`col-span-6 md:col-span-4 xl:col-span-3 flex items-center justify-center rounded-3xl aspect-square relative`}
@@ -36,12 +51,56 @@ const SingleItem: FC<singleItemProps> = ({ item }) => {
             <span>{convertToPersian(priceGenerator(item.price))} تومان</span>
           </div>
         </div>
-        <div className="flex items-center justify-end">
+        <div className="flex items-center justify-end gap-3">
+          <Popover
+            placement={"bottom"}
+            isOpen={isDeleting}
+            onOpenChange={setIsDeleting}
+          >
+            <Popover.Trigger>
+              <div className="bg-rose-100 rounded-lg p-1 duration-200 hover:bg-rose-200 hover:scale-90 cursor-pointer">
+                <Trash
+                  className="text-zinc-800 w-6 h-6 md:w-8 md:h-8"
+                  variant="Bulk"
+                />
+              </div>
+            </Popover.Trigger>
+            <Popover.Content>
+              <div className="p-5">
+                <div className="font-semibold text-base mb-3">
+                  <span>آیا مطمئن هستید؟</span>
+                </div>
+                <div className="flex items-center justify-center gap-3">
+                  <Button
+                    className=""
+                    auto
+                    color={"default"}
+                    ghost
+                    onClick={() => setIsDeleting(false)}
+                  >
+                    لغو
+                  </Button>
+                  <Button
+                    className=""
+                    auto
+                    color={"error"}
+                    onClick={deleteItemFunc}
+                  >
+                    حذف
+                  </Button>
+                </div>
+              </div>
+            </Popover.Content>
+          </Popover>
+
           <Link
             href={`/menu/${item._id}`}
             className="bg-zinc-100 rounded-lg p-1 duration-200 hover:bg-zinc-200 hover:scale-90"
           >
-            <Edit2 className="text-zinc-800 w-6 h-6 md:w-8 md:h-8" variant="Bulk" />
+            <Edit2
+              className="text-zinc-800 w-6 h-6 md:w-8 md:h-8"
+              variant="Bulk"
+            />
           </Link>
         </div>
       </div>

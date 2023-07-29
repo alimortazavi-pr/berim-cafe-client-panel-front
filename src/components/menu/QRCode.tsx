@@ -6,11 +6,12 @@ import { useAppSelector } from "@/store/hooks";
 import { cafeSelector } from "@/store/profile/selectors";
 
 //Tools
-import { ScanBarcode } from "iconsax-react";
+import { Eye, Link, ScanBarcode } from "iconsax-react";
 import { toBlob, toSvg } from "html-to-image";
 import jsZip from "jszip";
 import { toDataURL, toString as qrCodeToString } from "qrcode";
 import { saveAs } from "file-saver";
+import { Tooltip } from "@nextui-org/react";
 
 const QRCode = () => {
   //Redux
@@ -68,7 +69,7 @@ const QRCode = () => {
   }
 
   return (
-    <div className="max-h-full max-w-[100vw] overflow-hidden relative">
+    <div className="max-h-full max-w-[100vw] overflow-hidden relative flex items-center">
       <div className="absolute -top-[3000px]">
         <div
           ref={qrCodeRef}
@@ -93,9 +94,18 @@ const QRCode = () => {
           </div>
         </div>
       </div>
+      <Tooltip content={"مشاهده منو"}>
+        <a
+          href={`https://berimcafe.org/${cafe?.username}/menu`}
+          className="bg-zinc-100 rounded-xl h-12 w-12 duration-200 hover:bg-zinc-200 hover:scale-90 ml-2 flex items-center justify-center"
+          target="_blank"
+        >
+          <Eye className="text-zinc-800 w-8 h-8 md:w-8 md:h-8" variant="Bulk" />
+        </a>
+      </Tooltip>
       <button
         type="button"
-        className="text-lg font-bold text-zinc-800 flex items-center h-12 mb-2 xl:h-full px-4 bg-transparent border-2 border-zinc-600 rounded-xl hover:text-white hover:bg-zinc-800 hover:border-white duration-500"
+        className="text-lg font-bold text-zinc-800 flex items-center h-12 mb-2 xl:mb-0 xl:h-full px-4 bg-transparent border-2 border-zinc-600 rounded-xl hover:text-white hover:bg-zinc-800 hover:border-white duration-500"
         onClick={downloadQRCode}
       >
         <ScanBarcode className="w-6 h-6 ml-1" variant="Bold" />

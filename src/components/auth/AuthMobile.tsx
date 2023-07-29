@@ -7,6 +7,7 @@ import { ISignInForm, ISignUpForm } from "@/common/interfaces/auth.interface";
 
 //Tools
 import convertAPToEnglish from "ap-to-english";
+import convertToPersian from "num-to-persian";
 
 const AuthMobile: FC<{
   formikProps: FormikProps<ISignUpForm> | FormikProps<ISignInForm>;
@@ -19,7 +20,7 @@ const AuthMobile: FC<{
     if (!e.target.value) {
       formikProps.setFieldValue(
         "authMobile",
-        convertAPToEnglish(e.target.value.replace(/\,/g, ""))
+        convertToPersian(convertAPToEnglish(e.target.value.replace(/\,/g, "")))
       );
     } else if (
       !convertAPToEnglish(e.target.value.replace(/\,/g, "")).match(/^-?\d+$/)
@@ -28,7 +29,7 @@ const AuthMobile: FC<{
     } else {
       formikProps.setFieldValue(
         "authMobile",
-        convertAPToEnglish(e.target.value.replace(/\,/g, ""))
+        convertToPersian(convertAPToEnglish(e.target.value.replace(/\,/g, "")))
       );
     }
   }
