@@ -38,7 +38,7 @@ const ThumbnailImage: FC<{ formikProps: FormikProps<IItemForm> }> = ({
   }
 
   return (
-    <div className="col-span-12 lg:col-span-6 flex flex-col">
+    <div className="col-span-12 lg:col-span-6 flex flex-col items-center">
       <div
         className={`mb-[0.375rem] ${
           errors.thumbnailImage && touched.thumbnailImage
@@ -48,25 +48,25 @@ const ThumbnailImage: FC<{ formikProps: FormikProps<IItemForm> }> = ({
       >
         <label>تصویر آیتم</label>
       </div>
-      <div className="w-full min-h-[200px] flex-1 border rounded-2xl flex items-center justify-center relative">
+      <div className="w-[200px] h-[200px] border rounded-full flex items-center justify-center relative">
         {imagePreview?.url ? (
           <Image
             src={imagePreview.url}
             alt=""
             fill
-            className="rounded-2xl object-cover object-center"
+            className="rounded-full object-cover object-center"
           />
         ) : values?.thumbnailImage ? (
           <Image
             src={`https://api-panel.berimcafe.org/${values.thumbnailImage}`}
             alt=""
             fill
-            className="rounded-2xl object-cover object-center"
+            className="rounded-full object-cover object-center"
           />
         ) : null}
         {imagePreview?.url ? (
           <div
-            className="bg-white absolute z-20 top-3 left-2 rounded-2xl"
+            className="bg-white absolute z-20 top-3 left-2 rounded-full"
             onClick={destroyPic}
           >
             <CloseCircle className="w-6 h-6 text-red-400 cursor-pointer" />
@@ -74,7 +74,7 @@ const ThumbnailImage: FC<{ formikProps: FormikProps<IItemForm> }> = ({
         ) : null}
         <label
           htmlFor="thumbnailImage"
-          className="z-10 w-full h-full absolute bg-zinc-800/20 text-zinc-500 hover:bg-zinc-800/40 rounded-2xl hover:text-zinc-300 flex items-center justify-center cursor-pointer duration-300"
+          className="z-10 w-[200px] h-full absolute bg-zinc-800/20 text-zinc-500 hover:bg-zinc-800/40 rounded-full hover:text-zinc-300 flex items-center justify-center cursor-pointer duration-300"
         >
           <Camera className="w-10 h-10" />
         </label>

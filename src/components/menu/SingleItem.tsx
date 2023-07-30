@@ -41,13 +41,13 @@ const SingleItem: FC<singleItemProps> = ({ item }) => {
       ) : null}
       <div className="w-full h-full rounded-3xl bg-zinc-950 bg-opacity-40 z-10 p-3 md:p-5 flex flex-col justify-between">
         <div>
-          <div className="font-extrabold text-2xl md:text-3xl xl:text-4xl text-zinc-100 break-words mb-1">
+          <div className="font-extrabold text-2xl md:text-3xl xl:text-4xl text-zinc-100 truncate mb-1 w-full">
             <span>{item.title}</span>
           </div>
-          <div className="font-bold text-base md:text-lg xl:text-xl text-zinc-100 break-words mb-2">
+          <div className="font-bold text-base md:text-lg xl:text-xl text-zinc-100 truncate w-full mb-2">
             <span>{item.category.title}</span>
           </div>
-          <div className="font-bold text-base md:text-lg xl:text-xl text-zinc-100 break-words">
+          <div className="font-bold text-base md:text-lg xl:text-xl text-zinc-100 truncate w-full">
             <span>{convertToPersian(priceGenerator(item.price))} تومان</span>
           </div>
         </div>

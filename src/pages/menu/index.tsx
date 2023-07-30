@@ -69,11 +69,15 @@ const Menu: FC<menuProps> = ({ items, categories, errorMessage }) => {
 
   //Functions
   async function setItemsFunc() {
-    await dispatch(setItems(items || []));
+    if (items) {
+      await dispatch(setItems(items));
+    }
   }
 
   async function setCategoriesFunc() {
-    await dispatch(setCategories(categories || []));
+    if (categories) {
+      await dispatch(setCategories(categories));
+    }
   }
 
   return (

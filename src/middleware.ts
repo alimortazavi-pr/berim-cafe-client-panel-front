@@ -9,9 +9,9 @@ export async function middleware(request: NextRequest) {
 
   //Checking isAuth
   let isAuth: boolean = false;
-  const cafeAuthorization = request.cookies.get("cafeAuthorization");
+  const cafeAuthorization = await request.cookies.get("cafeAuthorization");
   if (cafeAuthorization) {
-    const transformedData = JSON.parse(cafeAuthorization.value);
+    const transformedData = await JSON.parse(cafeAuthorization.value);
     const token = transformedData.token;
     try {
       const res = await fetch(
