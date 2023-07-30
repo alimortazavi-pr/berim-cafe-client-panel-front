@@ -63,7 +63,7 @@ const TheAside = () => {
         <div className="relative w-[75px] h-[75px] border rounded-full border-zinc-800 mb-2">
           {profile?.logo ? (
             <Image
-              src={`https://api-panel.berimcafe.org/${profile.logo}`}
+              src={`https://api-panel-berim-cafe.cyclic.cloud/${profile.logo}`}
               alt=""
               fill
               className="rounded-full object-cover object-center"

@@ -33,7 +33,7 @@ const SingleItem: FC<singleItemProps> = ({ item }) => {
     >
       {item.thumbnailImage ? (
         <Image
-          src={`https://api-panel.berimcafe.org${item.thumbnailImage}`}
+          src={`https://api-panel-berim-cafe.cyclic.cloud${item.thumbnailImage}`}
           fill
           alt=""
           className="w-full h-full rounded-3xl object-cover object-center"
