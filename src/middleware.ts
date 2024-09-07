@@ -15,7 +15,7 @@ export async function middleware(request: NextRequest) {
     const token = transformedData.token;
     try {
       const res = await fetch(
-        "https://api-panel-berim-cafe.cyclic.cloud/v1/auth/check",
+        "https://beim-cafe-panel.liara.run/v1/auth/check",
         {
           headers: {
             Authorization: `Bearer ${token}`,

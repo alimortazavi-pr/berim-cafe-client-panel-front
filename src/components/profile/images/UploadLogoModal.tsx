@@ -85,7 +85,7 @@ const UploadLogoModal: FC<nextUIModalProps> = ({ bindings, setVisible }) => {
             />
           ) : profile?.logo ? (
             <Image
-              src={`https://api-panel-berim-cafe.cyclic.cloud/${profile.logo}`}
+              src={`https://beim-cafe-panel.liara.run/${profile.logo}`}
               alt=""
               fill
               className="rounded-full object-cover object-center"

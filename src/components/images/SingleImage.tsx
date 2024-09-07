@@ -43,7 +43,7 @@ const SingleImage: FC<singleImageProps> = ({ image }) => {
       className={`col-span-6 md:col-span-4 xl:col-span-3 flex items-center justify-center rounded-3xl aspect-square relative`}
     >
       <Image
-        src={`https://api-panel-berim-cafe.cyclic.cloud${image}`}
+        src={`https://beim-cafe-panel.liara.run${image}`}
         fill
         alt=""
         className="rounded-3xl object-cover object-center"
