@@ -33,7 +33,7 @@ const SingleItem: FC<singleItemProps> = ({ item }) => {
     >
       {item.thumbnailImage ? (
         <Image
-          src={`https://beim-cafe-panel.liara.run${item.thumbnailImage}`}
+          src={`http://localhost:7777${item.thumbnailImage}`}
           fill
           alt=""
           className="w-full h-full rounded-3xl object-cover object-center"

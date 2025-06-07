@@ -58,7 +58,7 @@ const ThumbnailImage: FC<{ formikProps: FormikProps<IItemForm> }> = ({
           />
         ) : values?.thumbnailImage ? (
           <Image
-            src={`https://beim-cafe-panel.liara.run/${values.thumbnailImage}`}
+            src={`http://localhost:7777/${values.thumbnailImage}`}
             alt=""
             fill
             className="rounded-full object-cover object-center"
