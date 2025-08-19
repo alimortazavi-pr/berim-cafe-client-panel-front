@@ -33,7 +33,7 @@ const SingleItem: FC<singleItemProps> = ({ item }) => {
     >
       {item.thumbnailImage ? (
         <Image
-          src={`http://localhost:7777${item.thumbnailImage}`}
+          src={`https://berim-cafe-back-production.up.railway.app${item.thumbnailImage}`}
           fill
           alt=""
           className="w-full h-full rounded-3xl object-cover object-center"

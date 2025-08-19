@@ -19,7 +19,7 @@ const ProfileSection = () => {
         <div className="relative w-[70px] h-[70px] border rounded-full border-zinc-800 mb-3">
           {profile?.logo ? (
             <Image
-              src={`http://localhost:7777/${profile.logo}`}
+              src={`https://berim-cafe-back-production.up.railway.app/${profile.logo}`}
               alt=""
               fill
               className="rounded-full object-cover object-center"

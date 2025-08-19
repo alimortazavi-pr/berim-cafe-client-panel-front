@@ -58,7 +58,7 @@ const ThumbnailImage: FC<{ formikProps: FormikProps<IItemForm> }> = ({
           />
         ) : values?.thumbnailImage ? (
           <Image
-            src={`http://localhost:7777/${values.thumbnailImage}`}
+            src={`https://berim-cafe-back-production.up.railway.app/${values.thumbnailImage}`}
             alt=""
             fill
             className="rounded-full object-cover object-center"

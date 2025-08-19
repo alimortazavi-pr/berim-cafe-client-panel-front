@@ -14,6 +14,7 @@ module.exports = withPWA({
       "api-panel.berimcafe.org",
       "cloud.berimcafe.ir",
       "beim-cafe-panel.liara.run",
+      "berim-cafe-back-production.up.railway.app",
     ],
   },
 });
