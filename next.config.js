@@ -15,7 +15,7 @@ module.exports = withPWA({
       "cloud.berimcafe.ir",
       "beim-cafe-panel.liara.run",
       "berim-cafe-back-production.up.railway.app",
-      "https://berimcafe-icons.s3.ir-thr-at1.arvanstorage.ir",
+      "berimcafe-icons.s3.ir-thr-at1.arvanstorage.ir",
     ],
   },
 });
